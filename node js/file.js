@@ -1,5 +1,6 @@
 
-
+// fs = stands for file system, it is a built-in module in node.js that allows us to work with the file system on our computer.
+//  We can use it to read, write, delete, and manipulate files and directories.
 
 
 const fs = require("fs");
@@ -57,4 +58,4 @@ console.log(fs.statSync("./hello.txt"));  // this will give the stats of the fil
 
 // 8.) Creating a directory or folder by mkdir
 
-fs.mkdirSync("my-docs");  // this will create a new directory called my-docs in the current directory
+// fs.mkdirSync("my-docs");  // this will create a new directory called my-docs in the current directory
