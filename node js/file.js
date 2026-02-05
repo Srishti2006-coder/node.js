@@ -4,8 +4,8 @@
 
 const fs = require("fs");
 
-// 1.) Synchronous way to read and write files
-// fs.writeFileSync("./hello.txt", "Hello hyiee");   // if i change this content then it overwrites the previous content of the file
+//1.) Synchronous way to read and write files
+// fs.writeFileSync("./hello.txt", "Hello i am using vs");   // if i change this content then it overwrites the previous content of the file
 
 // 2.) Asynchronous way to read and write files
 // fs.writeFile("./text.txt", "Hello hyiee i am using Async", (err) => {});   // this is the asynchronous way to write files, it takes a callback function as the third argument which will be called when the file is written
@@ -36,5 +36,6 @@ const fs = require("fs");
 
 
 
+// 5.) Appending data to a file
 
-
+fs.appendFileSync("./text.txt", new Date().getDate().toLocaleString());  // this will append the current date to the file test.txt, if the file does not exist it will create a new file and write the date in it
