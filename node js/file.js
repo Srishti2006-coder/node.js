@@ -48,14 +48,15 @@ fs.appendFileSync("./text.txt", new Date().getDate().toLocaleString());  // this
 
 // 6.) Deleting a file
 
-// fs.unlinkSync("./text.txt");  // this will delete the file text.txt
+fs.unlinkSync("./text.txt");  // this will delete the file text.txt yes 
 
 
 // 7.) Finding file stats
 
-console.log(fs.statSync("./hello.txt"));  // this will give the stats of the file hello.txt like size, created time, modified time etc.
+// console.log(fs.statSync("./hello.txt"));  // this will give the stats of the file hello.txt like size, created time, modified time etc.
 
 
 // 8.) Creating a directory or folder by mkdir
 
-// fs.mkdirSync("my-docs");  // this will create a new directory called my-docs in the current directory
+
+ fs.mkdirSync("my-docs");  // this will create a new directory called my-docs in the current directory
