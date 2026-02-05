@@ -12,7 +12,6 @@ const fs = require("fs");
 // fs.writeFile("./text.txt", "Hello hyiee i am using Async", (err) => {});   // this is the asynchronous way to write files, it takes a callback function as the third argument which will be called when the file is written
 
 
-
 // 3.) Reading files with Synchronous way
 
 // const result = fs.readFileSync("./contacts.txt", "utf-8"); 
@@ -44,3 +43,18 @@ const fs = require("fs");
 // 5.) Appending data to a file
 
 fs.appendFileSync("./text.txt", new Date().getDate().toLocaleString());  // this will append the current date to the file test.txt, if the file does not exist it will create a new file and write the date in it
+
+
+// 6.) Deleting a file
+
+// fs.unlinkSync("./text.txt");  // this will delete the file text.txt
+
+
+// 7.) Finding file stats
+
+console.log(fs.statSync("./hello.txt"));  // this will give the stats of the file hello.txt like size, created time, modified time etc.
+
+
+// 8.) Creating a directory or folder by mkdir
+
+fs.mkdirSync("my-docs");  // this will create a new directory called my-docs in the current directory
