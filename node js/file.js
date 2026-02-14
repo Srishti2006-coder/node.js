@@ -3,7 +3,7 @@
 //  We can use it to read, write, delete, and manipulate files and directories.
 
 
-const fs = require("fs");
+// const fs = require("fs");
 
 //1.) Synchronous way to read and write files
 // fs.writeFileSync("./hello.txt", "Hello i am using vs");   // if i change this content then it overwrites the previous content of the file
@@ -40,23 +40,56 @@ const fs = require("fs");
 // type is void because it does not return anything, it just calls the callback function when the file is read.
 
 
-
 // 5.) Appending data to a file
 
-fs.appendFileSync("./text.txt", new Date().getDate().toLocaleString());  // this will append the current date to the file test.txt, if the file does not exist it will create a new file and write the date in it
+// fs.appendFileSync("./text.txt", new Date().getDate().toLocaleString());  // this will append the current date to the file test.txt, if the file does not exist it will create a new file and write the date in it
 
 
 // 6.) Deleting a file
 
-fs.unlinkSync("./text.txt");  // this will delete the file text.txt yes 
+// fs.unlinkSync("./text.txt");  // this will delete the file text.txt yes 
 
 
-// 7.) Finding file stats
+// // 7.) Finding file stats
 
-// console.log(fs.statSync("./hello.txt"));  // this will give the stats of the file hello.txt like size, created time, modified time etc.
+// // console.log(fs.statSync("./hello.txt"));  // this will give the stats of the file hello.txt like size, created time, modified time etc.
+
+  
+// // 8.) Creating a directory or folder by mkdir
+
+// fs.mkdirSync("my-docs");  // this will create a new directory called my-docs in the current directory
 
 
-// 8.) Creating a directory or folder by mkdir
+
+// const fs = require("fs");
+// // 1.) Synchronous (Blocking) way to read and write files
+// fs.writeFileSync("./test.txt", "Hello i am using vs");
+
+// // 2.) Asynchronous (Non-blocking) way to read and write files
+// fs.writeFile("./test.txt", "Hello hyiee i am using Async", (err) => {});
 
 
- fs.mkdirSync("my-docs");  // this will create a new directory called my-docs in the current directory
+const fs = require("fs");
+const os = require("os");
+
+console.log(os.cpus().length);  // this will give the number of CPU cores available on the system
+
+// 3.) Reading files with Synchronous way  (Blocking example)
+
+// console.log("1");
+// // Blocking ..... exexution top to bottom
+// const result = fs.readFileSync("./contacts.txt");
+// console.log(result);
+
+// console.log("2");
+
+
+// 4.) Reading files with Asynchronous way (Non-blocking example)
+
+// console.log("1");
+// // Non-Blocking .....
+// fs.readFile("contacts.txt", "utf-8", (err,result) => {
+//     console.log(result);
+// });
+
+// console.log("2");
