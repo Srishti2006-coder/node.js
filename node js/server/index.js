@@ -21,6 +21,9 @@
 
 
 // Log bnaya jiske help se time aa rha hai jb bhi new entries hoyegi 
+// switch case bnaya jisme /, /aboutus and ek defualt case bnaya
+// url = protocol, https , domain and , path
+
 const http = require("http");
 const fs = require("fs");
 
