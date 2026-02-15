@@ -24,26 +24,64 @@
 // switch case bnaya jisme /, /aboutus and ek defualt case bnaya
 // url = protocol, https , domain and , path
 
+
+// const http = require("http");
+// const fs = require("fs");
+
+// const myServer = http.createServer((req, res) => {
+
+//     const log = `${Date.now()} : ${req.method} ${req.url} New req received \n`;
+
+//     fs.appendFile("log.txt", log, (err) => {
+
+//         switch(req.url) {
+//             case '/': 
+//                 res.end("Homepage");
+//                 break;
+
+//             case '/about': 
+//                 res.end("hello i am srishti");
+//                 break;
+
+//             default: 
+//                 res.end("404 not found");
+//         }
+//     });
+// });
+
+// myServer.listen(3000, () => {
+//     console.log("Server is running on port 3000");
+// });
+
+
+// req.url
+
 const http = require("http");
 const fs = require("fs");
+const url = require("url");
 
 const myServer = http.createServer((req, res) => {
 
-    const log = `${Date.now()} : ${req.method} ${req.url} New req received \n`;
+    if (req.url === "/favicon.ico") return res.end();
 
-    fs.appendFile("log.txt", log, (err) => {
+    const log = `${Date.now()}: ${req.url} New Req Received\n`;
+    const myUrl = url.parse(req.url);
 
-        switch(req.url) {
-            case '/': 
-                res.end("Homepage");
+    console.log(myUrl);
+
+    fs.appendFile("log.txt", log, (err, data) => {
+
+        switch (req.url) {
+            case "/":
+                res.end("HomePage");
                 break;
 
-            case '/about': 
-                res.end("hello i am srishti");
+            case "/about":
+                res.end("I am Piyush Garg");
                 break;
 
-            default: 
-                res.end("404 not found");
+            default:
+                res.end("404 Not Found");
         }
     });
 });
