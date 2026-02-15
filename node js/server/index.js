@@ -21,23 +21,28 @@
 
 
 // Log bnaya jiske help se time aa rha hai jb bhi new entries hoyegi 
-
 const http = require("http");
 const fs = require("fs");
 
-const myServer =  http.createServer((req, res)=> {
-    const log = `${Date.now()}: New request received\n`;    // req recieved jab yeh log ho jayega 
-    fs.appendFile("log.txt", log, (err,data) => {
+const myServer = http.createServer((req, res) => {
+
+    const log = `${Date.now()} : ${req.method} ${req.url} New req received \n`;
+
+    fs.appendFile("log.txt", log, (err) => {
 
         switch(req.url) {
-            case '/': res.end("Homepage");
-            break;
-            case '/about' : res.end("hello i am srishti");
-            break;
-            default : res.end("404 not found");
+            case '/': 
+                res.end("Homepage");
+                break;
+
+            case '/about': 
+                res.end("hello i am srishti");
+                break;
+
+            default: 
+                res.end("404 not found");
         }
-   // res.end("Hello from server");     // tab user ko yeh mesg recieve hoga
-}); 
+    });
 });
 
 myServer.listen(3000, () => {
